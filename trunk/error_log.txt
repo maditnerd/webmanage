@@ -1,0 +1,62 @@
+
+[1333540678] [error] [client 192.168.0.20] GET /test.bat: Error 500: Internal Server Error
+[1333541134] [error] [client 0.0.0.0] line 3497: cannot bind to 1000: No error
+[1333544677] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333544677] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333544677] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333544693] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333544693] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333544693] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333559457] [error] [client 169.254.118.154] GET /accueil.php: Error 500: Internal Server Error
+[1333559457] [error] [client 169.254.118.154] GET /accueil.php: vsnprintf error
+[1333559459] [error] [client 169.254.118.154] GET /: Error 500: Internal Server Error
+[1333559459] [error] [client 169.254.118.154] GET /: vsnprintf error
+[1333561434] [error] [client 169.254.118.154] POST /url: Error 404: Not Found
+[1333561443] [error] [client 169.254.118.154] POST /url: Error 404: Not Found
+[1333562347] [error] [client 192.168.0.20] POST /modifycomputername.php: Error 404: Not Found
+[1333571241] [error] [client 0.0.0.0] line 3497: cannot bind to 1000: No error
+[1333571427] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333572844] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333572979] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333572997] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333573001] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333576362] [error] [client 192.168.0.20] POST /sendurl.php: Error 404: Not Found
+[1333585268] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333585323] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333585330] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333585361] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333585451] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333585581] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333585685] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333585920] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333585931] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333585942] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333586027] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333586030] [error] [client 192.168.0.20] GET /unauthenticated/style.css: Error 404: Not Found
+[1333586504] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586515] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586525] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586543] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586551] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586556] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586577] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586587] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586612] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586679] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586697] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586704] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586722] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586728] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586734] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586740] [error] [client 192.168.0.20] GET /nom du fichier: Error 404: Not Found
+[1333586988] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333587008] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333587008] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333589331] [error] [client 192.168.0.20] GET /network/style.css: Error 404: Not Found
+[1333589388] [error] [client 192.168.0.20] GET /network/style.css: Error 404: Not Found
+[1333692410] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333692410] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333692410] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333692967] [error] [client 0.0.0.0] line 3733: cannot open ./certs: 
+[1333693056] [error] [client 0.0.0.0] line 3733: cannot open ./certs: 
+[1333693121] [error] [client 0.0.0.0] (null): cannot open ./certs/cert.pem: 
