@@ -1,0 +1,8 @@
+[1333705417] [error] [client 0.0.0.0] fopen(./pass.txt): No such file or directory
+[1333705417] [error] [client 0.0.0.0] fopen(./pass.txt): No such file or directory
+[1333705418] [error] [client 0.0.0.0] fopen(./pass.txt): No such file or directory
+[1333705419] [error] [client 0.0.0.0] fopen(./pass.txt): No such file or directory
+[1333705419] [error] [client 0.0.0.0] fopen(./pass.txt): No such file or directory
+[1333705419] [error] [client 0.0.0.0] fopen(./pass.txt): No such file or directory
+[1333707076] [error] [client 0.0.0.0] line 3497: cannot bind to 1000s: No error
+[1333707613] [error] [client 192.168.0.20] GET /network/network.pgp: Error 404: Not Found
