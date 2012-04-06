@@ -8,11 +8,11 @@ $question = 'cmd /C notifu.exe /t info /p "Informations" /m "L\'administrateur r
 exec($question);
 $WshShell->Run($question, 0, false);
 
-$modcn = exec('c:\windows\system32\cscript.exe computername.vbs');
+$modcn = exec('c:\windows\system32\cscript.exe ./vbs/computername.vbs');
 $modcn = mb_convert_encoding($modcn, "auto", "IBM-850");
 if ($modcn=="OK") {
 echo "<h1>Action acceptée</h1>";
-$rep = exec('c:\windows\system32\cscript.exe changecn.vbs '.$arg1);
+$rep = exec('c:\windows\system32\cscript.exe ./vbs/changecn.vbs '.$arg1);
 if ($rep==1) {
 echo "Le changement de nom a échoué";
 echo "<a href='accueil.php' ><h2> Retour </h2></a>";

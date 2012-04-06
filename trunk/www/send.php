@@ -1,12 +1,16 @@
 <?php
-$ipaddress = $_SERVER["REMOTE_ADDR"];
-$nbtscan = "nbtscan ". $ipaddress;
-$result = exec($nbtscan);
-$result = explode('    ',$result);
 
+include('func/func.php');
+
+$netbios = user_netbios();
 $mess = $_POST['limitedtextarea'];
-$WshShell = new COM("WScript.Shell");
-$mess = 'cmd /C notifu.exe /t info /p "'.$result[1].'" /m "'.$mess.'"';
-$WshShell->Run($mess, 0, false);
-echo '<meta http-equiv="refresh" content="0; URL=messagerie.php">';
+
+
+
+if ($netbios == "")
+$netbios = $ipaddress;
+
+notify("info",$netbios,$mess)
+
 ?>
+'<meta http-equiv="refresh" content="0; URL=messagerie.php">'
