@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée, veuillez vous identifier"
+AuthType Basic
+AuthUserFile "password.txt"
+Require valid-user
