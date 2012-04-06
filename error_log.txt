@@ -6,3 +6,19 @@
 [1333705419] [error] [client 0.0.0.0] fopen(./pass.txt): No such file or directory
 [1333707076] [error] [client 0.0.0.0] line 3497: cannot bind to 1000s: No error
 [1333707613] [error] [client 192.168.0.20] GET /network/network.pgp: Error 404: Not Found
+[1333716768] [error] [client 192.168.0.20] GET /img/reseau: Error 404: Not Found
+[1333724571] [error] [client 192.168.0.20] GET /network/network.php: Error 404: Not Found
+[1333727538] [error] [client 192.168.0.20] GET /style.css: Error 404: Not Found
+[1333734143] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333734143] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333734143] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333735435] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333735435] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333735435] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333736148] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333736148] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333736148] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333739374] [error] [client 192.168.0.20] GET /img/computer.png: Error 404: Not Found
+[1333743487] [error] [client 192.168.0.20] GET /fuck: Error 404: Not Found
+[1333743490] [error] [client 192.168.0.20] GET /fuck: Error 404: Not Found
+[1333743574] [error] [client 192.168.0.20] GET /fuck: Error 404: Not Found

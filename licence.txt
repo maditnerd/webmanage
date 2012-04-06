@@ -1,4 +1,4 @@
-Licence for all programes
+Licence for all programs
 
 Notifu : Open Source (not mentioned)
 http://www.paralint.com/projects/notifu/
