@@ -1,11 +1,12 @@
-<Title>WebManage : Chargement...</Title>
 <html>
+<Title>WebManage : Chargement...</Title>
 <?php
+include('func/func.php');
+
 $ip_admin = $_SERVER['REMOTE_ADDR'];
-$WshShell = new COM("WScript.Shell");
-$ip_admin = 'cmd /C notifu.exe /t warn /p "Alerte Sécurité" /m "Connexion depuis l\'adresse IP: ' . $ip_admin. '"';
-exec($ip_admin);
-$WshShell->Run($ip_admin, 0, false);
+notify("warn","Alerte Securité","Connexion depuis l'adresse IP: ".$ip_admin);
 ?>
+
+
 <meta http-equiv="refresh" content="0; URL=accueil.php">
 </html>
