@@ -1,0 +1,1 @@
+WMIC computersystem where caption='%1' rename %2
