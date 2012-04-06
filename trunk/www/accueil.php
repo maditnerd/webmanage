@@ -30,9 +30,10 @@ title('Configuration');
 echo'<table align=center>';
 	menu("reseau","network/network","Configuration Réseau");
 	menu("chat","messagerie","Messagerie");
+	menu("lan","scan_net","Voisinage réseau");
 echo'</table>';
 
-title('Ordinateurs sur le réseau');
+
 
 
 submit();
