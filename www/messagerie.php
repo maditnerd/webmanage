@@ -1,13 +1,5 @@
-<script language="javascript" type="text/javascript">
-function limitText(limitField, limitCount, limitNum) {
-	if (limitField.value.length > limitNum) {
-		limitField.value = limitField.value.substring(0, limitNum);
-	} else {
-		limitCount.value = limitNum - limitField.value.length;
-	}
-}
-</script>
-<link rel='stylesheet' type='text/css' href='style2.css' />
+<SCRIPT LANGUAGE="Javascript" SRC="js/messagerie.js"> </SCRIPT>
+<link rel='stylesheet' type='text/css' href='css/style2.css' />
 <title>Messagerie</title>
 
 <form name="mesform" action="send.php"  method="post">
@@ -20,5 +12,5 @@ function limitText(limitField, limitCount, limitNum) {
 
 <form name="urlform" action="sendurl.php"  method="post">
 <input type="text" name="urlsender" size="27" value="">
-<br><p align=center>URL<INPUT type="submit" value="Envoyer"</p>
+<br><p>URL<INPUT type="submit" value="Envoyer"</p>
 </form>
