@@ -1,3 +1,4 @@
+<link rel='stylesheet' type='text/css' href='css/style.css' />
 <html>
 <head>
 <Title>WebManage : Reboot en cours...</Title>
@@ -7,5 +8,6 @@
 include('func/func.php');
 title("REBOOT EN COURS VEUILLEZ PATIENTEZ");
 script('reboot');
+back();
 ?>
 </body>

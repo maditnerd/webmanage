@@ -27,3 +27,31 @@
 [1333806767] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
 [1333806767] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
 [1333808479] [error] [client 192.168.0.20] GET /style.css: Error 404: Not Found
+[1333817906] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333817973] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333818044] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333818161] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333818205] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333818222] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333818285] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333818297] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333820262] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333820262] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333820262] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333820547] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333820547] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333820547] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333828888] [error] [client 0.0.0.0] line 3497: cannot bind to 1000s: No error
+[1333832301] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333832301] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333832301] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333832385] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333834026] [error] [client 192.168.0.20] POST /pass_check.php: Error 404: Not Found
+[1333834419] [error] [client 192.168.0.20] GET /phpmyadmin/index.php: Error 500: Internal Server Error
+[1333834419] [error] [client 192.168.0.20] GET /phpmyadmin/index.php: vsnprintf error
+[1333834428] [error] [client 192.168.0.20] GET /phpmyadmin/setup/index.php: Error 500: Internal Server Error
+[1333834428] [error] [client 192.168.0.20] GET /phpmyadmin/setup/index.php: vsnprintf error
+[1333834517] [error] [client 192.168.0.20] GET /phpmyadmin/index.php: Error 500: Internal Server Error
+[1333834517] [error] [client 192.168.0.20] GET /phpmyadmin/index.php: vsnprintf error
+[1333835840] [error] [client 192.168.0.20] GET /phpmyadmin/index.php: Error 404: Not Found
+[1333835856] [error] [client 192.168.0.20] POST /form_action.php: Error 404: Not Found

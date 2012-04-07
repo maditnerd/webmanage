@@ -115,6 +115,11 @@ echo '
 	<td><a href="'.$javascript.'"><h2> '.$txt.' </h2></a></td>';
 }
 
+#Afficher un objet sans Texte
+function menu_img($img,$php,$txt)
+{
+echo '<td><a href="'.$php.'.php" ><img src="/img/'.$img.'.png" title="'.$txt.'" height="64" width="64" ></a></td>';
+}
 
 #Texte mis en valeur
 function text($txt)
@@ -128,6 +133,10 @@ function submit()
 title('<INPUT  type="submit" value="Enregistrer" />');
 }
 
+function submit_ok()
+{
+title('<INPUT  type="submit" value="Se Connecter" />');
+}
 #Retour à l'accueil
 function back()
 {
