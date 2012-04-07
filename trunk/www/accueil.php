@@ -16,7 +16,7 @@ $windowsver = script("windows");
 $windowsver = dosencode($windowsver);
 
 // INTERFACE
-echo '<form name="accform" action="modifycomputername.php" onsubmit="return validateForm()" method="post">';
+echo '<form name="accform" action="confirm_computername.php" onsubmit="return validateForm()" method="post">';
 
 // INFORMATIONS GENERALES
 
@@ -28,7 +28,7 @@ title('Configuration');
 
 echo'<table align=center>';
 	menu("reseau","network","Configuration Réseau");
-	menu("chat","messagerie","Messagerie");
+	menu_popup("chat","messagerie","Messagerie");
 	menu("lan","scan_net","Voisinage réseau");
 echo'</table>';
 

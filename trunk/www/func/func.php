@@ -106,6 +106,16 @@ echo '
 	<td><a href="'.$php.'.php" ><h2> '.$txt.' </h2></a></td>';
 }
 
+#Affiche un objet dans le menu et l'ouvre en popup
+function menu_popup($img,$php,$txt)
+{
+$javascript = "javascript:popup('$php.php','popup_1');";
+echo '
+	<td><img src="/img/'.$img.'.png" height="64" width="64" ></td>
+	<td><a href="'.$javascript.'"><h2> '.$txt.' </h2></a></td>';
+}
+
+
 #Texte mis en valeur
 function text($txt)
 {
@@ -121,7 +131,7 @@ title('<INPUT  type="submit" value="Enregistrer" />');
 #Retour à l'accueil
 function back()
 {
-echo "<a href='accueil.php'><h1>Revenir à l'index</h1>";
+echo "<a href='accueil.php'><h1>Revenir à l'accueil</h1>";
 }
 
 ##########################################
