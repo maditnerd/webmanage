@@ -1,5 +1,11 @@
+<html>
+<head>
+<Title>WebManage : Reboot en cours...</Title>
+</head>
+<body>
 <?php
-echo "<h1>REBOOT EN COURS VEUILLEZ PATIENTEZ</h1>";
-exec('./vbs/reboot.vbs')  
-
+include('func/func.php');
+title("REBOOT EN COURS VEUILLEZ PATIENTEZ");
+script('reboot');
 ?>
+</body>
