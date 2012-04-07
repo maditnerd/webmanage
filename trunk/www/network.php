@@ -1,33 +1,22 @@
 <html>
 <title>WebManage : Réseau</title>
 <head>
-<link rel='stylesheet' type='text/css' href='../style.css' />
+<link rel='stylesheet' type='text/css' href='css/style.css' />
 </head>
 
 <body>
 <?php
-echo "<h1>Configuration Réseau</h1>";
+include('func/func.php');
+title("Configuration Réseau");
 
-function ext_wmi($script)
-{
-
-$datas = shell_exec('c:\windows\system32\cscript.exe '.$script.'.vbs //NoLogo');
-$datas = explode(";", $datas);
-return $datas;
-} 
-$ips = ext_wmi(ipaddress);
-$macs = ext_wmi(macaddress);
-$masks = ext_wmi(netmask);
-$netname = ext_wmi(netname);
-$netid = ext_wmi(netid);
-$gateway = ext_wmi(gateway);
-$dns = ext_wmi(dns);
-$dhcp = ext_wmi(dhcp);
-
-
-
-
-
+$ips = script_wmi(ipaddress);
+$macs = script_wmi(macaddress);
+$masks = script_wmi(netmask);
+$netname = script_wmi(netname);
+$netid = script_wmi(netid);
+$gateway = script_wmi(gateway);
+$dns = script_wmi(dns);
+$dhcp = script_wmi(dhcp);
 
 $count = count($ips);
 
@@ -55,7 +44,7 @@ echo "<br>";
 }
 
 
-echo "<a href='../accueil.php'><h1>Revenir à l'index</h1>";
+back();
 ?>
 
 </body>

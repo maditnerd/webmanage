@@ -1,12 +1,10 @@
 <?php
 
+################ PROGRAMMES EXTERNE ###########################
 #Affiche une notification
 #$type info/warn/error
 #$title Titre
 #$message : Message
-
-################ PROGRAMMES EXTERNE ###########################
-
 function notify($type,$title,$message)
 {
 $WshShell = new COM("WScript.Shell");
@@ -14,6 +12,25 @@ $command = 'cmd /C %cd%/exe/notifu.exe /t '.$type.' /p "'.$title.'" /m "'.$messa
 exec($command);
 $WshShell->Run($command, 0, false);
 }
+
+#Execute un script VBS
+function script($script_name)
+{
+$result = exec('%systemroot%\system32\cscript.exe ./vbs/'.$script_name.'.vbs');
+return $result;
+}
+
+#Execute un SCRIPT VBS WMI
+function script_wmi($script)
+{
+$datas = shell_exec('c:\windows\system32\cscript.exe ./vbs/'.$script.'.vbs //NoLogo');
+$datas = explode(";", $datas);
+return $datas;
+} 
+
+
+
+################ PROGRAMMES RESEAUX #########################
 
 #Recupère le nom du groupe et de l'ordinateur de l'utilisateur
 function user_netbios()
@@ -34,21 +51,14 @@ $result = explode('    ',$result);
 return $result[1];
 }
 
-#Execute un script VBS
-function script($script_name)
+function scan_netbios($network,$cidr)
 {
-$result = exec('%systemroot%\system32\cscript.exe ./vbs/'.$script_name.'.vbs');
+$nbtscan = '"./exe/nbtscan.exe " -P  '.$network;
+$result = shell_exec($nbtscan);
 return $result;
 }
 
-#Convertit le résultat d'une commande DOS
-function dosencode($text)
-{
-$result = mb_convert_encoding($text, "auto", "IBM-850");
-return $result;
-}
-
-############# CONVERSION RESEAU #################
+############# CONVERSIONS #################
 
 
 ## NETMASK TO CIDR
@@ -69,6 +79,14 @@ $netmask = ip2long($netmask);
 $network = $netmask & $ip;
 return long2ip($network);
 }
+
+#Convertit le résultat d'une commande DOS
+function dosencode($text)
+{
+$result = mb_convert_encoding($text, "auto", "IBM-850");
+return $result;
+}
+
 ################################################
 
 
@@ -88,10 +106,22 @@ echo '
 	<td><a href="'.$php.'.php" ><h2> '.$txt.' </h2></a></td>';
 }
 
+#Texte mis en valeur
+function text($txt)
+{
+echo '<h3>'.$txt.'<h3>';
+}
+
 #Bouton Enregistrer
 function submit()
 {
 title('<INPUT  type="submit" value="Enregistrer" />');
+}
+
+#Retour à l'accueil
+function back()
+{
+echo "<a href='accueil.php'><h1>Revenir à l'index</h1>";
 }
 
 ##########################################

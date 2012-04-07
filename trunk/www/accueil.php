@@ -21,20 +21,21 @@ echo '<form name="accform" action="modifycomputername.php" onsubmit="return vali
 // INFORMATIONS GENERALES
 
 title('<INPUT type="text" value="'.$computername.'" name="computername">');
-echo '<h3>'.$windowsver.'<h3>';
-
+text($windowsver);
 // CONFIGURATION	  
 	  
 title('Configuration');
 
 echo'<table align=center>';
-	menu("reseau","network/network","Configuration Réseau");
+	menu("reseau","network","Configuration Réseau");
 	menu("chat","messagerie","Messagerie");
 	menu("lan","scan_net","Voisinage réseau");
 echo'</table>';
 
-
-
+title('Administration');
+echo'<table align=center>';
+	menu("admin","admin","Changer de mot de passe");
+echo'</table>';
 
 submit();
 
