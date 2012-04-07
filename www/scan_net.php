@@ -1,15 +1,8 @@
 <?php
 include('func/func.php');
 
-function ext_wmi($script)
-{
-$datas = shell_exec('c:\windows\system32\cscript.exe network/'.$script.'.vbs //NoLogo');
-$datas = explode(";", $datas);
-return $datas;
-} 
-
-$ips = ext_wmi(ipaddress);
-$masks = ext_wmi(netmask);
+$ips = script_wmi(ipaddress);
+$masks = script_wmi(netmask);
 
 $ip = trim($ips[1]);
 $mask = trim($masks[1]);
@@ -17,8 +10,9 @@ $mask = trim($masks[1]);
 $cidr = mask2cidr($mask);
 $network = network($ip,$mask);
 $network_scan = $network."/".$cidr;
-$nbtscan = '"./exe/nbtscan.exe " -P  '.$network_scan;
-$result = shell_exec($nbtscan);
+
+$result = scan_netbios($network_scan,$cidr);
+
 
 $result = str_replace ("MACAddress","",$result);
 $result = str_replace ("ComputerName","",$result);
@@ -28,7 +22,7 @@ $result = str_replace (",","",$result);
 
 $j = 0;
 $result = explode('=>',$result);
-for($i=6;$i<sizeof($result);$i++) // tant que $i est inferieur au nombre d'éléments du tableau...
+for($i=6;$i<sizeof($result);$i++)
    {
 $ip_save[$j] = $result[$i];
 $i = $i +2;
@@ -50,6 +44,8 @@ $j++;
 <?php
 title("Voisinage Réseau");
 
+text("Réseau: ".$network_scan);
+
 echo "<table>";
 echo "<tr>";
 for($k=0;$k<sizeof($ip_save);$k++)
@@ -64,6 +60,7 @@ for($k=0;$k<sizeof($ip_save);$k++)
 {
 
 echo "<td>";
+echo '<a href="http://'.trim($ip_save[$k]).'">';
 echo $ip_save[$k];
 echo"</td>";
 }
@@ -86,5 +83,5 @@ echo $groupe_save[$k];
 echo "</td>";
 }
 echo "</tr></table>";
-echo "<a href='../accueil.php'><h1>Revenir à l'index</h1>";
+back();
 ?>

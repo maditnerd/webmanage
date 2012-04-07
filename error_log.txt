@@ -22,3 +22,8 @@
 [1333743487] [error] [client 192.168.0.20] GET /fuck: Error 404: Not Found
 [1333743490] [error] [client 192.168.0.20] GET /fuck: Error 404: Not Found
 [1333743574] [error] [client 192.168.0.20] GET /fuck: Error 404: Not Found
+[1333755000] [error] [client 192.168.0.20] GET /admin.php: Error 404: Not Found
+[1333806767] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333806767] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333806767] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333808479] [error] [client 192.168.0.20] GET /style.css: Error 404: Not Found
