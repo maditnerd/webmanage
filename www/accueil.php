@@ -20,7 +20,9 @@ echo '<form name="accform" action="confirm_computername.php" onsubmit="return va
 
 // INFORMATIONS GENERALES
 
-title('<INPUT type="text" value="'.$computername.'" name="computername">');
+title('<table align=center><td><INPUT type="text" value="'.$computername.'" name="computername">');
+menu_img("shutdown","shutdown","Arrêter WebManage");
+echo '</td></table>';
 text($windowsver);
 // CONFIGURATION	  
 	  
@@ -34,7 +36,7 @@ echo'</table>';
 
 title('Administration');
 echo'<table align=center>';
-	menu("admin","admin","Changer de mot de passe");
+	menu("admin","admin","Utilisateurs");
 echo'</table>';
 
 submit();

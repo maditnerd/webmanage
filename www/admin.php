@@ -1,36 +1,40 @@
+<html>
+
+<head>
+
+<title>Webmanage : Utilisateurs</title>
+
+<link rel='stylesheet' type='text/css' href='css/style2.css' />
+</head>
+
 <?php
+include("/func/func.php");
+include("/func/class.login.php");
 
-if (isset($_POST['pass']))
+if (isset($_POST['pass']) AND isset($_POST['login']))
 {
-
-	$exec = '"exe/htpasswd.exe" -nb pass '.$_POST["pass"];
-	$pass_crypte = shell_exec($exec);
-	$pass_crypte = str_replace("pass:","",$pass_crypte);
-	
-    $login = "admin";
-	$towrite = $login.":localhost:".$pass_crypte;
-
-	$fichier="../pass.txt"; 
-	$handle =fopen($fichier,"w");
-	fwrite($handle,$towrite);
-	
-
+$username = $_POST['login'];
+$password = md5($_POST['pass']);
+$log = new logmein();
+$log->create_login($username, $password);
 }
 
-else // On n'a pas encore rempli le formulaire
+else 
 {
+}
+title("Utilisateurs");
+title("Création d'un utilisateur");
 ?>
 
-</p>
 
-<p>Entrez votre mot de passe </p>
 
 <form method="post">
-    <p>
-        Login : Admin<br />
-        Mot de passe : <input type="text" name="pass"><br /><br />
-    
-        <input type="submit" value="Enregistrer !">
-    </p>
-</form>
-<?php } ?>
+    <p align=center>
+        Login : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<input type="text" name="login"><br />
+        Mot de passe :
+		<input type="text" name="pass"><br />
+ <?php
+ submit();
+ echo '</form>';
+?>
