@@ -1,16 +1,42 @@
-<html>
-
-<head>
-
-<title>Webmanage : Accueil</title>
-
-<link rel='stylesheet' type='text/css' href='css/style.css' />
-</head>
-
-<body>
 <?php
+
+include('func/class.login.php');
 include('func/func.php');
 
+header_show("Accueil","style");
+
+#CHECK LOGIN
+if (isset($_POST['password']) AND isset($_POST['username']))
+{
+$log = new logmein();
+$log->encrypt = true; //set encryption
+if($_REQUEST['action'] == "login"){
+    if($log->login("logon", $_REQUEST['username'], $_REQUEST['password']) == true){
+	
+    }
+	else{
+		$ip_admin = $_SERVER['REMOTE_ADDR'];
+		notify("error","Alerte Securité","Mot de passe refusée depuis l'adresse IP: ".$ip_admin);
+        title('<font color="#990000">Mot de passe incorrecte!</font>');
+		echo '<meta http-equiv="refresh" content="4; URL=index.php">';
+    }
+}
+}
+#CHECK LOGIN
+
+// LOGIN START
+$log = new logmein();
+$log->encrypt = true; //set encryption
+//parameters are(SESSION, name of the table, name of the password field, name of the username field)
+if($log->logincheck($_SESSION['loggedin'], "logon", "password", "useremail") == false){
+  echo '<meta http-equiv="refresh" content="0; URL=index.php">';
+}
+	else{
+//LOGIN END
+
+
+header_show("Accueil","style");
+   
 $computername = script("getcomputername");
 $windowsver = script("windows");
 $windowsver = dosencode($windowsver);
@@ -19,14 +45,15 @@ $windowsver = dosencode($windowsver);
 echo '<form name="accform" action="confirm_computername.php" onsubmit="return validateForm()" method="post">';
 
 // INFORMATIONS GENERALES
-
-title('<table align=center><td><INPUT type="text" value="'.$computername.'" name="computername">');
+echo "<table align=center>";
+menu_img("logout","logout","Se déconnecter");
+title('<td><INPUT type="text" value="'.$computername.'" name="computername"></td>');
 menu_img("shutdown","shutdown","Arrêter WebManage");
-echo '</td></table>';
+echo '</table>';
 text($windowsver);
+
 // CONFIGURATION	  
-	  
-title('Configuration');
+ title('Configuration');
 
 echo'<table align=center>';
 	menu("reseau","network","Configuration Réseau");
@@ -43,10 +70,8 @@ submit();
 
 echo '</form>';
 
+footer_show();
 
+echo '<SCRIPT LANGUAGE="Javascript" SRC="js/accueil.js"> </SCRIPT>';
+}
 ?>
-
-</body>
-</html>
-
-<SCRIPT LANGUAGE="Javascript" SRC="js/accueil.js"> </SCRIPT>

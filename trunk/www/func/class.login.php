@@ -1,8 +1,8 @@
-	<?php
+<?php
 //For security reasons, don't display any errors or warnings. Comment out in DEV.
-error_reporting(0);
-//start session
 session_start();
+error_reporting(1);
+
 class logmein {
     //database setup
        //MAKE SURE TO FILL IN DATABASE INFO
@@ -29,7 +29,7 @@ class logmein {
  
     //login function
     function login($table, $username, $password){
-        //conect to DB
+		//conect to DB
         $this->dbconnect();
         //make sure table name is set
         if($this->user_table == ""){
@@ -194,9 +194,9 @@ Your new password is: ".$newpassword."
         $this->dbconnect();
         echo'
 <form name="'.$formname.'" method="post" id="'.$formname.'" class="'.$formclass.'" enctype="application/x-www-form-urlencoded" action="'.$formaction.'">
-<div><label for="username">Username</label>
+<div><label for="username">Identifiant&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
 <input name="username" id="username" type="text"></div>
-<div><label for="password">Password</label>
+<div><label for="password">Mot de passe &nbsp</label>
 <input name="password" id="password" type="password"></div>
 <input name="action" id="action" value="login" type="hidden">
 <div>

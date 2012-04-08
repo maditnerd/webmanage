@@ -1,13 +1,17 @@
-<title>WebManage : Arrêt</title>
 <?php
+include('func/class.login.php');
+// LOGIN START
+$log = new logmein();
+$log->encrypt = true; //set encryption
+//parameters are(SESSION, name of the table, name of the password field, name of the username field)
+if($log->logincheck($_SESSION['loggedin'], "logon", "password", "useremail") == false){
+  echo '<meta http-equiv="refresh" content="0; URL=index.php">';
+}
+	else{
+//LOGIN END
+
 echo "WebManage est en cours de fermeture...<br>";
-$result = shell_exec("%cd%/exe/pskill.exe /accepteula -t mysqld.exe");
-
-$result = str_replace("Unable to kill process mysqld.exe:","Le gestionnaire de mot de passe est déjà fermé : ERREUR",$result);
-$result = str_replace("Process does not exist."," ",$result);
-echo $result;
-
+shell_exec("%cd%/exe/pskill.exe /accepteula -t mysqld.exe");
 shell_exec("%cd%/exe/pskill.exe /accepteula -t mongoose.exe");
-
-
+}
 ?>
