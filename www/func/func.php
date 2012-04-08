@@ -92,6 +92,23 @@ return $result;
 
 ############# AFFICHAGE #################
 
+#Header
+function header_show($titre,$css)
+{
+echo "
+<html>
+<head>
+<title>Webmanage : ".$titre."</title>
+<link rel='stylesheet' type='text/css' href='css/".$css.".css' />
+</head><body>";
+}
+
+#Footer
+function footer_show()
+{
+echo "</body></html>";
+}
+
 #Affiche un titre
 function title($texte)
 {

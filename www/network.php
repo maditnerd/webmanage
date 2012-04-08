@@ -1,12 +1,18 @@
-<html>
-<title>WebManage : Réseau</title>
-<head>
-<link rel='stylesheet' type='text/css' href='css/style.css' />
-</head>
-
-<body>
 <?php
 include('func/func.php');
+include('func/class.login.php');
+
+// LOGIN START
+$log = new logmein();
+$log->encrypt = true; //set encryption
+//parameters are(SESSION, name of the table, name of the password field, name of the username field)
+if($log->logincheck($_SESSION['loggedin'], "logon", "password", "useremail") == false){
+  echo '<meta http-equiv="refresh" content="0; URL=index.php">';
+}
+	else{
+//LOGIN END
+header_show("Réseau","style");
+
 title("Configuration Réseau");
 
 $ips = script_wmi(ipaddress);
@@ -43,8 +49,8 @@ echo $dns_sub[$j]."<br>";
 echo "<br>";
 }
 
-
 back();
-?>
 
-</body>
+footer_show();
+}
+?>

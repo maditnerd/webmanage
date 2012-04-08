@@ -1,13 +1,18 @@
-<html>
-
-<head>
-<title>Webmanage : Confirmation</title>
-<link rel='stylesheet' type='text/css' href='css/style.css' />
-
-</head>
-
 <?php
+include('func/class.login.php');
 include('func/func.php');
+
+// LOGIN START
+$log = new logmein();
+$log->encrypt = true; //set encryption
+//parameters are(SESSION, name of the table, name of the password field, name of the username field)
+if($log->logincheck($_SESSION['loggedin'], "logon", "password", "useremail") == false){
+  echo '<meta http-equiv="refresh" content="0; URL=index.php">';
+}
+	else{
+//LOGIN END
+
+header_show("Confirmation","style");
 
 $arg1 = $_POST['computername'];
 $arg2 = $_POST['oldcompname'];
@@ -40,6 +45,8 @@ $modcn = "Aucune";
 text("Raison invoqué : ".$modcn);
 back();
 }
- 
+
+footer_show();
+}
 
 ?>
