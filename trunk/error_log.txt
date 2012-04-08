@@ -136,3 +136,6 @@
 [1333869992] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
 [1333869992] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
 [1333869992] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333870850] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333905385] [error] [client 0.0.0.0] line 3497: cannot bind to 1000s: No error
+[1333905454] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found

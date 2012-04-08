@@ -34,9 +34,6 @@ if($log->logincheck($_SESSION['loggedin'], "logon", "password", "useremail") == 
 	else{
 //LOGIN END
 
-
-header_show("Accueil","style");
-   
 $computername = script("getcomputername");
 $windowsver = script("windows");
 $windowsver = dosencode($windowsver);
@@ -59,6 +56,7 @@ echo'<table align=center>';
 	menu("reseau","network","Configuration Réseau");
 	menu_popup("chat","messagerie","Messagerie");
 	menu("lan","scan_net","Voisinage réseau");
+	menu("dos","dos","Invite de commande");
 echo'</table>';
 
 title('Administration');
