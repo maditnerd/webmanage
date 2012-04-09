@@ -139,6 +139,21 @@ function menu_img($img,$php,$txt)
 echo '<td><a href="'.$php.'.php" ><img src="/img/'.$img.'.png" title="'.$txt.'" height="64" width="64" ></a></td>';
 }
 
+#Afficher un objet sans texte et aller sur une url avec un get
+function menu_img_get($img,$php,$txt)
+{
+echo '<td><a href="'.$php.'" ><img src="/img/'.$img.'.png" title="'.$txt.'" height="64" width="64" ></a></td>';
+}
+
+#Afficher un objet sans Texte
+function menu_usr($txt)
+{
+echo '<td>
+	  <img src="/img/user.png" title="'.$txt.'" height="64" width="64"  >
+	  <a href="user.php?user='.$txt.'"><h2 align = center> '.$txt.' </h2></a>
+	  </td>';
+}
+
 #Texte mis en valeur
 function text($txt)
 {
@@ -155,10 +170,17 @@ function submit_ok()
 {
 title('<INPUT  type="submit" value="Se Connecter" />');
 }
+
+
 #Retour à l'accueil
 function back()
 {
 echo "<a href='accueil.php'><h1>Revenir à l'accueil</h1>";
+}
+
+function back_user()
+{
+echo "<a href='admin.php'><h1>Revenir aux utilisateurs</h1>";
 }
 
 ##########################################

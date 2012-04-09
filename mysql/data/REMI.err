@@ -244,3 +244,70 @@ InnoDB: buffer...
 120408 19:16:27 [Note] Event Scheduler: Loaded 0 events
 120408 19:16:27 [Note] ./mysql/bin/mysqld.exe: ready for connections.
 Version: '5.5.22'  socket: ''  port: 3306  MySQL Community Server (GPL)
+120409  7:36:40 [Note] Plugin 'FEDERATED' is disabled.
+120409  7:36:40 InnoDB: The InnoDB memory heap is disabled
+120409  7:36:40 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+120409  7:36:40 InnoDB: Compressed tables use zlib 1.2.3
+120409  7:36:40 InnoDB: Initializing buffer pool, size = 128.0M
+120409  7:36:40 InnoDB: Completed initialization of buffer pool
+120409  7:36:40 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+120409  7:36:40  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+120409  7:36:40  InnoDB: Waiting for the background threads to start
+120409  7:36:41 InnoDB: 1.1.8 started; log sequence number 1608120
+120409  7:36:41 [Note] Event Scheduler: Loaded 0 events
+120409  7:36:41 [Note] ./mysql/bin/mysqld.exe: ready for connections.
+Version: '5.5.22'  socket: ''  port: 3306  MySQL Community Server (GPL)
+120409  7:58:44 [Note] Plugin 'FEDERATED' is disabled.
+120409  7:58:44 InnoDB: The InnoDB memory heap is disabled
+120409  7:58:44 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+120409  7:58:44 InnoDB: Compressed tables use zlib 1.2.3
+120409  7:58:44 InnoDB: Initializing buffer pool, size = 128.0M
+120409  7:58:44 InnoDB: Completed initialization of buffer pool
+120409  7:58:44 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+120409  7:58:44  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+120409  7:58:44  InnoDB: Waiting for the background threads to start
+120409  7:58:45 InnoDB: 1.1.8 started; log sequence number 1608120
+120409  7:58:45 [Note] Event Scheduler: Loaded 0 events
+120409  7:58:45 [Note] ./mysql/bin/mysqld.exe: ready for connections.
+Version: '5.5.22'  socket: ''  port: 3306  MySQL Community Server (GPL)
+120409  9:05:25 [Note] Plugin 'FEDERATED' is disabled.
+120409  9:05:25 InnoDB: The InnoDB memory heap is disabled
+120409  9:05:25 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+120409  9:05:25 InnoDB: Compressed tables use zlib 1.2.3
+120409  9:05:25 InnoDB: Initializing buffer pool, size = 128.0M
+120409  9:05:25 InnoDB: Completed initialization of buffer pool
+120409  9:05:25 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+120409  9:05:25  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+120409  9:05:25  InnoDB: Waiting for the background threads to start
+120409  9:05:26 InnoDB: 1.1.8 started; log sequence number 1608130
+120409  9:05:26 [Note] Event Scheduler: Loaded 0 events
+120409  9:05:26 [Note] ./mysql/bin/mysqld.exe: ready for connections.
+Version: '5.5.22'  socket: ''  port: 3306  MySQL Community Server (GPL)
+120409  9:06:01 [Note] Plugin 'FEDERATED' is disabled.
+120409  9:06:01 InnoDB: The InnoDB memory heap is disabled
+120409  9:06:01 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+120409  9:06:01 InnoDB: Compressed tables use zlib 1.2.3
+120409  9:06:01 InnoDB: Initializing buffer pool, size = 128.0M
+120409  9:06:01 InnoDB: Completed initialization of buffer pool
+120409  9:06:01  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.

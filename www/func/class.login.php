@@ -59,6 +59,13 @@ class logmein {
         }
  
     }
+	
+	function show_users(){
+	
+	$this->dbconnect();
+	$result = mysql_query("SELECT * FROM logon") or die(mysql_error());
+	return $result;
+	}
  
     //prevent injection
     function qry($query) {
@@ -237,14 +244,32 @@ Your new password is: ".$newpassword."
 	
 	function create_login($username, $password){
         //Insert login/pass
-		title('<img src="/img/info.png" height="32" width="32" > <font color="#990000">Mot de passe créé</font>');
+		title('<img src="/img/info.png" height="32" width="32" > <font color="#990000">Utilisateur crée</font>');
 		$this->dbconnect();
         $qry = ("INSERT INTO logon (useremail,password,userlevel) VALUES('".$username."','".$password."','1')");
 		$result = mysql_query($qry) or die(mysql_error());
     }
 	
+	function delete_login($username){
+        //Insert login/pass
+		$this->dbconnect();
+        $qry = ("DELETE FROM logon WHERE useremail='".$username."'");
+		$result = mysql_query($qry) or die(mysql_error());
+		title('<img src="/img/info.png" height="32" width="32" > <font color="#990000">Utilisateur Effacé</font>');
+		echo '<meta http-equiv="refresh" content="1; URL=admin.php">';
+    }
 			
-		
+	function check_login($username){
+	 $result = $this->qry("SELECT * FROM logon WHERE useremail='".$username."'");
+     $row=mysql_fetch_assoc($result);
+	 return $row;
+	}
+	
+	function update_password($username,$password){
+	$qry = "UPDATE logon SET password='".$password."' WHERE useremail='".$username."'";
+    $result = mysql_query($qry) or die(mysql_error());
+	title('<img src="/img/info.png" height="32" width="32" > <font color="#990000">Mot de passe changé</font>');
+	}
  	
 
 }
