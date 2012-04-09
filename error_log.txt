@@ -1,0 +1,9 @@
+[1333978419] [error] [client 192.168.0.20] GET /log.php: Error 404: Not Found
+[1333979802] [error] [client 192.168.0.11] GET /favicon.ico: Error 404: Not Found
+[1333982768] [error] [client 192.168.0.20] GET /www.google.fr: Error 404: Not Found
+[1333982775] [error] [client 192.168.0.20] GET /www.google.fr: Error 404: Not Found
+[1333982783] [error] [client 192.168.0.20] GET /www.google.fr: Error 404: Not Found
+[1333983417] [error] [client 192.168.0.20] GET /favicon.ico: Error 404: Not Found
+[1333983734] [error] [client 192.168.0.20] GET /inetwork.php: Error 404: Not Found
+[1333983850] [error] [client 192.168.0.20] GET /class.login.php: Error 404: Not Found
+[1333985132] [error] [client 92.90.20.41] GET /favicon.ico: Error 404: Not Found

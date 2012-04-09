@@ -5,24 +5,6 @@ include('func/func.php');
 
 header_show("Accueil","style");
 
-#CHECK LOGIN
-if (isset($_POST['password']) AND isset($_POST['username']))
-{
-$log = new logmein();
-$log->encrypt = true; //set encryption
-if($_REQUEST['action'] == "login"){
-    if($log->login("logon", $_REQUEST['username'], $_REQUEST['password']) == true){
-	
-    }
-	else{
-		$ip_admin = $_SERVER['REMOTE_ADDR'];
-		notify("error","Alerte Securité","Mot de passe refusée depuis l'adresse IP: ".$ip_admin);
-        title('<font color="#990000">Mot de passe incorrecte!</font>');
-		echo '<meta http-equiv="refresh" content="4; URL=index.php">';
-    }
-}
-}
-#CHECK LOGIN
 
 // LOGIN START
 $log = new logmein();
@@ -44,7 +26,7 @@ echo '<form name="accform" action="confirm_computername.php" onsubmit="return va
 // INFORMATIONS GENERALES
 echo "<table align=center>";
 menu_img("logout","logout","Se déconnecter");
-title('<td><INPUT type="text" value="'.$computername.'" name="computername"></td>');
+echo '<td><INPUT type="text" value="'.$computername.'" name="computername"></td>';
 menu_img("shutdown","shutdown","Arrêter WebManage");
 echo '</table>';
 text($windowsver);
@@ -62,6 +44,7 @@ echo'</table>';
 title('Administration');
 echo'<table align=center>';
 	menu("admin","admin","Utilisateurs");
+	menu("log","log","Historique des connexions");
 echo'</table>';
 
 submit();

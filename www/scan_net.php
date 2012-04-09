@@ -48,7 +48,7 @@ title("Voisinage Réseau");
 
 text("Réseau: ".$network_scan);
 
-echo "<table>";
+echo "<table align=center>";
 echo "<tr>";
 for($k=0;$k<sizeof($ip_save);$k++)
 {

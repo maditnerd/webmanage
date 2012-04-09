@@ -1,7 +1,7 @@
 <?php
 //For security reasons, don't display any errors or warnings. Comment out in DEV.
 session_start();
-error_reporting(1);
+error_reporting(0);
 
 class logmein {
     //database setup
@@ -9,7 +9,7 @@ class logmein {
     var $hostname_logon = 'localhost';      //Database server LOCATION
     var $database_logon = 'login';       //Database NAME
     var $username_logon = 'root';       //Database USERNAME
-    var $password_logon = '';       //Database PASSWORD
+    var $password_logon = 'qVFqcvDXFGDFAcSRtRMl';       //Database PASSWORD
  
     //table fields
     var $user_table = 'logon';          //Users table name
@@ -118,83 +118,8 @@ class logmein {
         }
     }
  
-    //reset password
-    function passwordreset($username, $user_table, $pass_column, $user_column){
-        //conect to DB
-        $this->dbconnect();
-        //generate new password
-        $newpassword = $this->createPassword();
- 
-        //make sure password column and table are set
-        if($this->pass_column == ""){
-            $this->pass_column = $pass_column;
-        }
-        if($this->user_column == ""){
-            $this->user_column = $user_column;
-        }
-        if($this->user_table == ""){
-            $this->user_table = $user_table;
-        }
-        //check if encryption is used
-        if($this->encrypt == true){
-            $newpassword_db = md5($newpassword);
-        }else{
-            $newpassword_db = $newpassword;
-        }
- 
-        //update database with new password
-        $qry = "UPDATE ".$this->user_table." SET ".$this->pass_column."='".$newpassword_db."' WHERE ".$this->user_column."='".stripslashes($username)."'";
-        $result = mysql_query($qry) or die(mysql_error());
- 
-        $to = stripslashes($username);
-        //some injection protection
-        $illegals=array("%0A","%0D","%0a","%0d","bcc:","Content-Type","BCC:","Bcc:","Cc:","CC:","TO:","To:","cc:","to:");
-        $to = str_replace($illegals, "", $to);
-        $getemail = explode("@",$to);
- 
-        //send only if there is one email
-        if(sizeof($getemail) > 2){
-            return false;
-        }else{
-            //send email
-            $from = $_SERVER['SERVER_NAME'];
-            $subject = "Password Reset: ".$_SERVER['SERVER_NAME'];
-            $msg = "
- 
-Your new password is: ".$newpassword."
- 
-";
- 
-            //now we need to set mail headers
-            $headers = "MIME-Version: 1.0 rn" ;
-            $headers .= "Content-Type: text/html; \r\n" ;
-            $headers .= "From: $from  \r\n" ;
- 
-            //now we are ready to send mail
-            $sent = mail($to, $subject, $msg, $headers);
-            if($sent){
-                return true;
-            }else{
-                return false;
-            }
-        }
-    }
- 
-    //create random password with 8 alphanumerical characters
-    function createPassword() {
-        $chars = "abcdefghijkmnopqrstuvwxyz023456789";
-        srand((double)microtime()*1000000);
-        $i = 0;
-        $pass = '' ;
-        while ($i <= 7) {
-            $num = rand() % 33;
-            $tmp = substr($chars, $num, 1);
-            $pass = $pass . $tmp;
-            $i++;
-        }
-        return $pass;
-    }
- 
+     
+    
     //login form
     function loginform($formname, $formclass, $formaction){
         //conect to DB
@@ -207,7 +132,7 @@ Your new password is: ".$newpassword."
 <input name="password" id="password" type="password"></div>
 <input name="action" id="action" value="login" type="hidden">
 <div>
-<input name="submit" id="submit" value="Login" type="submit"></div>
+<input name="submit" id="submit" value="                        Se connecter                     " type="submit"></div>
 </form>
  
 ';
@@ -244,10 +169,10 @@ Your new password is: ".$newpassword."
 	
 	function create_login($username, $password){
         //Insert login/pass
-		title('<img src="/img/info.png" height="32" width="32" > <font color="#990000">Utilisateur crée</font>');
 		$this->dbconnect();
         $qry = ("INSERT INTO logon (useremail,password,userlevel) VALUES('".$username."','".$password."','1')");
 		$result = mysql_query($qry) or die(mysql_error());
+		title('<img src="/img/info.png" height="32" width="32" > <font color="#990000">Utilisateur crée</font>');
     }
 	
 	function delete_login($username){
@@ -255,8 +180,7 @@ Your new password is: ".$newpassword."
 		$this->dbconnect();
         $qry = ("DELETE FROM logon WHERE useremail='".$username."'");
 		$result = mysql_query($qry) or die(mysql_error());
-		title('<img src="/img/info.png" height="32" width="32" > <font color="#990000">Utilisateur Effacé</font>');
-		echo '<meta http-equiv="refresh" content="1; URL=admin.php">';
+		echo '<meta http-equiv="refresh" content="0; URL=admin.php">';
     }
 			
 	function check_login($username){
@@ -271,13 +195,40 @@ Your new password is: ".$newpassword."
 	title('<img src="/img/info.png" height="32" width="32" > <font color="#990000">Mot de passe changé</font>');
 	}
  	
-
+	function update_username($oldusername,$username){
+	$qry = "UPDATE logon SET useremail='".$username."' WHERE useremail='".$oldusername."'";
+    $result = mysql_query($qry) or die(mysql_error());
+	echo '<meta http-equiv="refresh" content="0; URL=admin.php">';
+	}
+	
+	function update_log($type,$ip)
+	{
+		$this->dbconnect();
+        $qry = ("INSERT INTO log_security (date,type,ip) VALUES(NOW(),'".$type."','".$ip."')");
+		$result = mysql_query($qry) or die(mysql_error());
+	}
+	
+	function show_logs(){
+	
+	$this->dbconnect();
+	$result = mysql_query("SELECT * FROM log_security WHERE type='OK' OR type='fail'") or die(mysql_error());
+	return $result;
+	}
+	
+	function delete_log(){
+        //Insert login/pass
+		$this->dbconnect();
+        $qry = ("DELETE FROM log_security");
+		$result = mysql_query($qry) or die(mysql_error());
+    }
+	
+	function fail2ban($ip){
+	$this->dbconnect();
+	$result = mysql_query("SELECT * FROM log_security WHERE type='FAIL' AND ip='".$ip."'") or die(mysql_error());
+	$count = mysql_affected_rows();
+	return $count;
+	}
 }
 	
-?>		
-			
-			
-			
-			
-		
+?>
 
