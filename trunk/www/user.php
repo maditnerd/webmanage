@@ -13,6 +13,15 @@ if($log->logincheck($_SESSION['loggedin'], "logon", "password", "useremail") == 
 //LOGIN END
 $user = $_GET["user"];
 
+$log = new logmein();
+$login_existence = $log->check_login($_GET["user"]);
+if ($login_existence["useremail"] !== $_GET["user"])
+			{
+				echo '<meta http-equiv="refresh" content="0; URL=admin.php">';
+			}
+else
+			{
+
 // Vérifie sur un utilisateur a été spécifié
 if (!isset($user)) 
 {
@@ -21,6 +30,19 @@ if (!isset($user))
 
 else
  {
+
+////////////////////////
+//CHANGE USER NAME
+//////////////////////// 
+if (isset($_POST["username_box"]))
+	{
+		$login = $_POST['username_box'];
+		$login = str_replace('"','',$login);
+		$login = str_replace("'",'',$login);
+		$login = trim($login);
+		$log = new logmein();
+		$log->update_username($_GET["user"],$login);
+	}
 
 ////////////////////////
 // DELETE USER
@@ -59,10 +81,12 @@ header_show($user,"style2");
 echo '
 <form method="post">
 ';
-title('<INPUT style="background-color:transparent; border:none; text-align:center; font-size:150%; color: #333333;" type="text" value="'.$user.'" name="computername">');
+title('<INPUT style="background-color:transparent; border:none; text-align:center; font-size:150%; color: #333333;" type="text" value="'.$user.'" name="username_box"><INPUT  type="submit" value="OK" />');
+
 
 echo '
-
+</form>
+<form method="post">
 <table align=center><tr>';
 menu_img_get("delete","user.php?user=".$user."&delete=1","Supprimer l'utilisateur");
 
@@ -78,6 +102,7 @@ echo '<td>
 ';
 
  back_user();
+ }
  }
  }
  ?>

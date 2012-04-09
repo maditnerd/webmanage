@@ -1,10 +1,8 @@
 <?php
-
 include('func/class.login.php');
 include('func/func.php');
 
-header_show("Messagerie","style2");
-echo '<SCRIPT LANGUAGE="Javascript" SRC="js/messagerie.js"> </SCRIPT>';
+
 
 // LOGIN START
 $log = new logmein();
@@ -15,7 +13,11 @@ if($log->logincheck($_SESSION['loggedin'], "logon", "password", "useremail") == 
 }
 	else{
 //LOGIN END
+$computername = script("getcomputername");
 
+headersmall_show($computername,"style2");
+title($computername);
+echo '<SCRIPT LANGUAGE="Javascript" SRC="js/messagerie.js"> </SCRIPT>';
 echo '
 <form name="mesform" action="send.php"  method="post">
 <textarea style="resize: none;" name="limitedtextarea" onKeyDown="limitText(this.form.limitedtextarea,this.form.countdown,65);" onKeyUp="limitText(this.form.limitedtextarea,this.form.countdown,65);">

@@ -104,6 +104,17 @@ echo "
 </head><body>";
 }
 
+function headersmall_show($titre,$css)
+{
+echo "
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html>
+<head>
+<title>".$titre."</title>
+<link rel='stylesheet' type='text/css' href='css/".$css.".css' />
+</head><body>";
+}
+
 #Footer
 function footer_show()
 {

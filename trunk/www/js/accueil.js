@@ -1,7 +1,7 @@
 
 //Ouvre un popup
 function popup(page) {
-window.open(page,'popup','width=201,height=200,toolbar=false,scrollbars=0');
+window.open(page,'popup','width=201,height=225');
 }
 
 //Validation du formulaire
